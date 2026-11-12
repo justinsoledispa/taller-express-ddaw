@@ -52,7 +52,7 @@ app.patch('/api/fotos/:id', (req, res) => {
     const foto = fotos.find((foto) => foto.id === id);
 
     if (!foto) {
-        return res.status(404).json({ mensaje: `Foto ${id} no encontrada` });
+        return res.status(404).json({ mensaje: 'Foto ${id} no encontrada' });
     }
 
     const { titulo, descripcion, calificacion } = req.body;
@@ -73,7 +73,7 @@ app.delete('/api/fotos/:id', (req, res) => {
     const indice = fotos.findIndex((foto) => foto.id === id);
 
     if (indice === -1) {
-        return res.status(404).json({ mensaje: `Foto ${id} no encontrada` });
+        return res.status(404).json({ mensaje: 'Foto ${id} no encontrada' });
     }
 
     fotos.splice(indice, 1);
